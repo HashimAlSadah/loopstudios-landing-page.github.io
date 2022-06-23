@@ -1,0 +1,65 @@
+@import "./config";
+
+@include forScreenWidth(900px){
+    .menu a, .footer__menu a{
+        position: relative;
+
+        &::after{
+            content: "";
+            position: absolute;
+            width: 0;
+            left: 0;
+            bottom: -7px;
+            height: 2px;
+            background-color: $white;
+            transform: translateX(50%);
+            transition: width 0.5s ease;
+        }
+
+        &:hover::after{
+            width: 50%;
+        }
+    }
+
+    .main__body a.desktop:hover{
+        background-color: $black;
+        color: $white;
+    }
+
+    .main__body .card:hover{
+
+        & img{
+            opacity: 0.4;
+        }
+
+        &::after{
+            background-image: none;               
+        }
+
+        & p{
+            color: $black;
+        }
+    }
+
+    .social-media-icon{
+        position: relative;
+
+        &::after{
+            content: "";
+            position: absolute;
+            width: 0;
+            left: 0;
+            bottom: -7px;
+            height: 2px;
+            background-color: $white;
+            transition: width 0.5s ease;
+        }
+
+        &:hover::after{
+            width: 100%;
+        }
+    }
+
+
+}
+
